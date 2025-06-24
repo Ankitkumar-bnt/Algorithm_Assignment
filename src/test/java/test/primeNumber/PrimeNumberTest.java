@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import com.primeNumber.Q1PrimeNumber;
 
 public class PrimeNumberTest {
-
-	Q1PrimeNumber prime = new Q1PrimeNumber();
 	
 	@Test
 	public void testPrimeNumbers()
