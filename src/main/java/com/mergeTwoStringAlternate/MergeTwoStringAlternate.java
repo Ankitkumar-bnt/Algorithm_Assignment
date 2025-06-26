@@ -21,6 +21,9 @@ public class MergeTwoStringAlternate {
 
 	public static String merge(String s1, String s2)
 	{
+		if(s1.length()==0 || s2.length()==0)
+			return "Invalid input";
+		
 		StringBuilder b = new StringBuilder();
 		for(int i=0;i<s2.length();i++)
 		{

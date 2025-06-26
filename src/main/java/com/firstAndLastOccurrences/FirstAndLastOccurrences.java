@@ -1,11 +1,24 @@
 package com.firstAndLastOccurrences;
 
+import java.util.Scanner;
+
 public class FirstAndLastOccurrences {
 
 	public static void main(String[] args) {
 
-		int arr[] = {1,2,2,4,7,2,5,2,6};
-		int[] firstAndLast = firstAndLast(arr, 7);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array: ");
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		
+		System.out.println("Enter array: ");
+		for(int i=0;i<size;i++)
+			arr[i]=sc.nextInt();
+		
+		System.out.println("Enter number to find: ");
+		int num = sc.nextInt();
+		
+		int[] firstAndLast = firstAndLast(arr, num);
 		
 		if(firstAndLast.length == 2)
 			System.out.println("First index: "+firstAndLast[0]+"\nLast index: "+firstAndLast[1]);
