@@ -4,52 +4,61 @@ import java.util.Scanner;
 
 public class SmallestAndSecondSmallest {
 
-	private static Scanner sc = new Scanner(System.in);
-	
-	public static void main(String[] args) {
-		
-		System.out.println("Enter size of array: ");
-		int size = sc.nextInt();
-		
-		inputHelper(size);
-	}
-	
-	public static void inputHelper(int size)
-	{
-		if(size<=0) {
-			System.out.println("Invalid input");
-			return;
-		}
+    private static Scanner sc = new Scanner(System.in);
 
-		int arr[] = new int[size];
-		System.out.println("Enter array: ");
-		for(int i=0;i<size;i++)
-			arr[i]= sc.nextInt();
-		
-		minAnd2ndMin(arr);
-	}
-	
-	public static void minAnd2ndMin(int arr[]) {
-		
-		if(arr.length<2)
-		{
-			System.out.println("{-1,-1}");
-			return;
-		}
-		
-		int min = Integer.MAX_VALUE;
-		int secMin = 0;
-		
-		for(int i=0;i<arr.length;i++)
-		{
-			if(min>arr[i])
-			{
-				secMin = min;
-				min = arr[i];
-			}
-		}
-		
-		System.out.println("{"+min+", "+secMin+"}");
-	}
+    public static void main(String[] args) {
+
+        System.out.println("Enter size of array: ");
+        int size = sc.nextInt();
+
+        inputHelper(size);
+    }
+
+    public static void inputHelper(int size) {
+        if (size <= 0) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        int arr[] = new int[size];
+        System.out.println("Enter array: ");
+        for (int i = 0; i < size; i++)
+            arr[i] = sc.nextInt();
+
+        int[] minAnd2ndMin = minAnd2ndMin(arr);
+        System.out.println("{" + minAnd2ndMin[0] + ", " + minAnd2ndMin[1] + "}");
+    }
+
+    public static int[] minAnd2ndMin(int arr[]) {
+        int result[] = new int[2];
+
+        if (arr.length < 2) {
+            result[0] = -1;
+            result[1] = -1;
+            return result;
+        }
+
+        int min = Integer.MAX_VALUE;
+        int secMin = Integer.MAX_VALUE;
+
+        for (int num : arr) {
+            if (num < min) {
+                secMin = min;
+                min = num;
+            } else if (num != min && num < secMin) {
+                secMin = num;
+            }
+        }
+
+        if (secMin == Integer.MAX_VALUE) {
+            result[0] = -1;
+            result[1] = -1;
+        } else {
+            result[0] = min;
+            result[1] = secMin;
+        }
+
+        return result;
+    }
 
 }

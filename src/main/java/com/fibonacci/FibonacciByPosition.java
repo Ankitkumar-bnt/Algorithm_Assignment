@@ -21,6 +21,8 @@ public class FibonacciByPosition {
 		}
 		else
 			System.out.println("Invaild input");
+
+		sc.close();
 	}
 
 	public static int series(int limit) {

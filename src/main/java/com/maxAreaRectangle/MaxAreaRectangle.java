@@ -28,6 +28,7 @@ public class MaxAreaRectangle {
             	System.out.println("Invalid input");
         }
         System.out.println(calculate_Area(rectangles));
+        sc.close();
     }
     
     public static int calculate_Area(List<List<Integer>> reactangles)

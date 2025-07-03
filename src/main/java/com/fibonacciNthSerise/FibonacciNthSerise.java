@@ -25,7 +25,9 @@ public class FibonacciNthSerise {
 		}
 		else
 			System.out.println("Invaild input");
+		sc.close();
 	}
+
 	
 	public static List<Integer> seriesList(int limit) {
 		

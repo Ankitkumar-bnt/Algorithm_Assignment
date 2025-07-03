@@ -25,7 +25,7 @@ public class KthSmallestElement {
 	}
 
 	public static int kthSmallest(Integer arr[], int kthSmallest) {
-		if(kthSmallest > arr.length)
+		if(kthSmallest > arr.length || kthSmallest == 0)
 			return -1;
 		
 		Set<Integer> sortedArray = new TreeSet<>(Arrays.asList(arr));

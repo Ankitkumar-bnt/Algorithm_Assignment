@@ -48,7 +48,7 @@ public class ConvertArrayToZigZag {
 		}
 		
 		for(int i:arr)
-			System.out.print(i+" ");
+			System.out.print( i+" ");
 	}
 
 }

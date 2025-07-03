@@ -14,6 +14,7 @@ public class GoodOrBadString {
 		String str = sc.nextLine();
 		
 		System.out.println(isGoodorBad(str));
+		sc.close();
 	}
 	
 	public static int isGoodorBad(String str)

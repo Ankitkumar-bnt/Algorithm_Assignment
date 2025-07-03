@@ -11,11 +11,12 @@ public class FindFactorial {
 		int num = 0;
 		if(sc.hasNextInt()) {
 			num = sc.nextInt();
-			System.out.println(factorial(40));
+			System.out.println(factorial(num));
 		}
 		else {
 			System.out.println("Invalid input");
 		}
+		sc.close();
 	}
 
 	public static int factorial(int num)

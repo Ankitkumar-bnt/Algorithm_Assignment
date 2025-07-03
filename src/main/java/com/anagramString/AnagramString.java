@@ -12,17 +12,18 @@ public class AnagramString {
 		System.out.println("Enter 2 string: ");
 		
 		System.out.println(remAnagram(sc.nextLine().toLowerCase(), sc.nextLine().toLowerCase()));
+		sc.close();
 	}
 	
 	public static int remAnagram(String s1, String s2)
 	{
 		List<Character> ch1 = new ArrayList<>();
-		for(char c:s1.toCharArray())
+		for(char c:s1.toLowerCase().toCharArray())
 			ch1.add(c);
 		Collections.sort(ch1);
 		
 		List<Character> ch2 = new ArrayList<>();
-		for(char c:s2.toCharArray())
+		for(char c:s2.toLowerCase().toCharArray())
 			ch2.add(c);
 		Collections.sort(ch2);
 		

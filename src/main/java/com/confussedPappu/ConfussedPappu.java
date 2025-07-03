@@ -20,6 +20,8 @@ public class ConfussedPappu {
 		}
 		else
 			System.out.println("Invaild input");
+
+		sc.close();
 	}
 
 	public static int findDiff(int amount) {

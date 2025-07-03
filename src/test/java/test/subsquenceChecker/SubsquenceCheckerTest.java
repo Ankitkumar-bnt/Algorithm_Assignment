@@ -32,4 +32,17 @@ public class SubsquenceCheckerTest {
 		assertEquals(0, SubsquenceChecker.isSubSequence("abcde", "abc"));
 	}
 	
+	@Test
+	void subsquenceChecker_whenFirstIsNull_returnsZero()
+	{
+	    assertEquals(0, SubsquenceChecker.isSubSequence(null, "abc"));
+	}
+
+	@Test
+	void subsquenceChecker_whenSecondIsNull_returnsZero()
+	{
+	    assertEquals(0, SubsquenceChecker.isSubSequence("abc", null));
+	}
+
+	
 }

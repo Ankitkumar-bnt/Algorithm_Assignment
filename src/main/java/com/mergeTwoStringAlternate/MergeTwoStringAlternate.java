@@ -17,6 +17,7 @@ public class MergeTwoStringAlternate {
 			s1 = merge(s2, s1);
 		
 		System.out.println(s1);
+		sc.close();
 	}
 
 	public static String merge(String s1, String s2)

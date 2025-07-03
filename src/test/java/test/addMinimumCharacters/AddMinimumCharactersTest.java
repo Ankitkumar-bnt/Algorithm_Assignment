@@ -8,21 +8,75 @@ import com.addMinimumCharacters.AddMinimumCharacters;
 
 public class AddMinimumCharactersTest {
 
+    @Test
+    void addMinimumCharacters_whenStringGiven_thenReturnsRequiredChar() {
+        assertEquals(2, AddMinimumCharacters.addMinChar("abc"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenGivenStringIsPalindrome_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("cbaabc"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenGivenStringHavePartialPalindrome_thenReturnsRequiredChar() {
+        assertEquals(2, AddMinimumCharacters.addMinChar("abang"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenSingleCharacter_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("a"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenTwoIdenticalCharacters_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("aa"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenTwoDifferentCharacters_thenReturnsOne() {
+        assertEquals(1, AddMinimumCharacters.addMinChar("ab"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenRepeatingPattern_thenReturnsCorrectCount() {
+        assertEquals(3, AddMinimumCharacters.addMinChar("abcd"));
+    }
+
+
+    @Test
+    void addMinimumCharacters_whenEmptyString_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar(""));
+    }
+
+    @Test
+    void addMinimumCharacters_whenAllSameCharacters_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("aaaaa"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenStringWithSpaces_thenReturnsCorrectCount() {
+        assertEquals(4, AddMinimumCharacters.addMinChar("a b c"));
+    }
+
+
 	@Test
-	void addMinimumCharacters_whenStringGiven_thenReturnsRequiredChar()
-	{
-		assertEquals(2, AddMinimumCharacters.addMinChar("abc"));
-	}
-	
-	@Test
-	void addMinimumCharacters_whenGivenStringIsPallindrome_thenReturnsZero()
-	{
-		assertEquals(0, AddMinimumCharacters.addMinChar("cbaabc"));
-	}
-	
-	@Test
-	void addMinimumCharacters_whenGivenStringHavePartialPallindrome_thenReturnsRequiredChar()
-	{
-		assertEquals(2, AddMinimumCharacters.addMinChar("abang"));
-	}
+    void addMinimumCharacters_whenStringWithNumbers_thenReturnsCorrectCount() {
+        assertEquals(4, AddMinimumCharacters.addMinChar("12345"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenStringWithSymbols_thenReturnsCorrectCount() {
+        assertEquals(2, AddMinimumCharacters.addMinChar("a@b"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenPalindromeWithSpaces_thenReturnsCorrectCount() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("a b a"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenLongRandomString_thenReturnsCorrectCount() {
+        assertEquals(7, AddMinimumCharacters.addMinChar("abcdefgh"));
+    }
 }

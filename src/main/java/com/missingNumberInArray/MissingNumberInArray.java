@@ -10,10 +10,12 @@ public class MissingNumberInArray {
 		System.out.println("Enter size: ");
 		int size = sc.nextInt();
 		Integer arr[] = new Integer[size-1];
+		System.out.println("Enter positive number: ");
 		for(int i=0;i<size-1;i++)
 			arr[i] = sc.nextInt();
 		
 		System.out.println(missingNumber(arr,size));
+		sc.close();
 	}
 	
 	public static int missingNumber(Integer arr[],int size){

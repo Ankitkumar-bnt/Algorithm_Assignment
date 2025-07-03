@@ -25,24 +25,27 @@ public class ImmdiateSmallerElement {
 		for(int i=0;i<size;i++)
 			arr[i]= sc.nextInt();
 		
-		immediateSmaller(arr);
+		int[] immediateSmaller = immediateSmaller(arr);
+		for(int i=0;i<size;i++)
+			System.out.print(immediateSmaller[i]+" ");
 	}
 	
-	public static void immediateSmaller(int arr[])
+	public static int[] immediateSmaller(int arr[])
 	{
-		
+		int result[] = new int[arr.length];
 		for(int i=1;i<arr.length;i++)
 		{
 			if(arr[i-1] > arr[i])
 			{
-				System.out.print(arr[i]+" ");
+				result[i-1] = arr[i];
 			}
 			else
-				System.out.print("-1 ");
-			
-			if(i==arr.length-1)
-				System.out.print("-1 ");
+				result[i-1] = -1;
+				
 		}
+		if(result.length>0)
+		result[arr.length-1] = -1;
+		return result;
 	}
 
 }

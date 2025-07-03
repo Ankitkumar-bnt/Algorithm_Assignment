@@ -15,7 +15,7 @@ public class SubsquenceChecker {
 	}
 	
 	public static int isSubSequence(String a, String b){
-		if(a.length()==0 || b.length()==0) {
+		if(a == null || b == null || a.length()==0 || b.length()==0) {
 			System.out.println("Invalid input");
 			return 0;
 		}

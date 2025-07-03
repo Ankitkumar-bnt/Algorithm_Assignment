@@ -21,6 +21,7 @@ public class MaximumProductSubarray {
 			arr[i] = sc.nextInt();
 		
 		System.out.println(maxProduct(arr));
+		sc.close();
 	}
 
 	public static int maxProduct(Integer arr[])

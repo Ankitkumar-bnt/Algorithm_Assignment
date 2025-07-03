@@ -24,6 +24,7 @@ public class EvenUniqueSubset {
 		
 		Arrays.sort(arr);
 		getSubset(arr, size);
+		sc.close();
 	}
 
 	public static void getSubset(int[] arr, int size) {

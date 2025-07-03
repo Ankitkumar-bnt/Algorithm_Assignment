@@ -11,7 +11,7 @@ public class EquilibriumPoint {
 		if(size <= 0)
 		{
 			System.out.println("Invalid input");
-			return ;
+			return;
 		}
 		Integer arr[] = new Integer[size];
 		for(int i=0;i<size;i++)
