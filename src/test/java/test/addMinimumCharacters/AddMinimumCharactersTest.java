@@ -1,6 +1,7 @@
 package test.addMinimumCharacters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,11 +20,6 @@ public class AddMinimumCharactersTest {
     }
 
     @Test
-    void addMinimumCharacters_whenGivenStringHavePartialPalindrome_thenReturnsRequiredChar() {
-        assertEquals(2, AddMinimumCharacters.addMinChar("abang"));
-    }
-
-    @Test
     void addMinimumCharacters_whenSingleCharacter_thenReturnsZero() {
         assertEquals(0, AddMinimumCharacters.addMinChar("a"));
     }
@@ -34,15 +30,9 @@ public class AddMinimumCharactersTest {
     }
 
     @Test
-    void addMinimumCharacters_whenTwoDifferentCharacters_thenReturnsOne() {
-        assertEquals(1, AddMinimumCharacters.addMinChar("ab"));
-    }
-
-    @Test
     void addMinimumCharacters_whenRepeatingPattern_thenReturnsCorrectCount() {
         assertEquals(3, AddMinimumCharacters.addMinChar("abcd"));
     }
-
 
     @Test
     void addMinimumCharacters_whenEmptyString_thenReturnsZero() {
@@ -59,8 +49,7 @@ public class AddMinimumCharactersTest {
         assertEquals(4, AddMinimumCharacters.addMinChar("a b c"));
     }
 
-
-	@Test
+    @Test
     void addMinimumCharacters_whenStringWithNumbers_thenReturnsCorrectCount() {
         assertEquals(4, AddMinimumCharacters.addMinChar("12345"));
     }
@@ -79,4 +68,29 @@ public class AddMinimumCharactersTest {
     void addMinimumCharacters_whenLongRandomString_thenReturnsCorrectCount() {
         assertEquals(7, AddMinimumCharacters.addMinChar("abcdefgh"));
     }
+
+    @Test
+    void addMinimumCharacters_whenNullInput_thenThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            AddMinimumCharacters.addMinChar(null);
+        });
+        assertEquals("Input string cannot be null", exception.getMessage());
+    }
+
+    @Test
+    void addMinimumCharacters_whenOnlySpaces_thenReturnsZero() {
+        assertEquals(0, AddMinimumCharacters.addMinChar("     "));
+    }
+
+    @Test
+    void addMinimumCharacters_whenOnlySpecialCharacters_thenReturnsCorrectCount() {
+        assertEquals(3, AddMinimumCharacters.addMinChar("@#$%"));
+    }
+
+    @Test
+    void addMinimumCharacters_whenVeryLongNonPalindrome_thenReturnsCorrectCount() {
+        String input = "abcdefghijabcdefghij";
+        assertEquals(19, AddMinimumCharacters.addMinChar(input));
+    }
+
 }

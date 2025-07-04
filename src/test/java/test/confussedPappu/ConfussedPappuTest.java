@@ -30,4 +30,9 @@ public class ConfussedPappuTest {
     void findDiff_whenInputIsZero_thenReturns0() {
         assertEquals(0, ConfussedPappu.findDiff(0));
     }
+    
+    @Test
+    void findDiff_whenInputIsNegative_thenReturns0() {
+        assertEquals(0, ConfussedPappu.findDiff(-336));
+    }
 }

@@ -15,6 +15,9 @@ public class AddMinimumCharacters {
 	}
 	
 	  public static int addMinChar(String str) {
+			if(str == null)
+				throw new IllegalArgumentException("Input string cannot be null");
+				
 	        int n = str.length();
 	        int max = 0;
 	        for (int i = 0; i < n; i++) {

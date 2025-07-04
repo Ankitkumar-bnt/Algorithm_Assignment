@@ -25,6 +25,8 @@ public class ConfussedPappu {
 	}
 
 	public static int findDiff(int amount) {
+		if(amount<0)
+			return 0;
 		int temp = makeReverse(amount);
 		temp = makeReverse(temp);
 		return temp - amount;
